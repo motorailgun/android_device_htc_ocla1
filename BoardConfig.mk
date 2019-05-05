@@ -52,7 +52,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board boot:0
+
 TARGET_PREBUILT_KERNEL := device/htc/ocla1/prebuilt/Image.gz-dtb
 
 # Platform
@@ -74,10 +74,13 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Recovery
+AB_OTA_UPDATER := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RECOVERY := false
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-AB_OTA_UPDATER := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # TWRP specific build flags
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
@@ -96,8 +99,8 @@ TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/system/lib64/android.hardware.boot
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_NO_SCREEN_BLANK := true
+TW_USE_LEDS_HAPTICS := true
 #TW_USE_TOOLBOX := true
-
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
@@ -124,8 +127,13 @@ TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TW_CRYPTO_USE_SYSTEM_VOLD := hwservicemanager servicemanager qseecomd keymaster-3-0
 TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
+
+## additional twrp flags ##
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := device/htc/ocla1/installer
+TW_HAS_EDL_MODE := true
 
 # TWRP Debug Flags
 #TWRP_EVENT_LOGGING := true
