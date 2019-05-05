@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_ime.mk
+    $(LOCAL_DIR)/omni_ocla1.mk
