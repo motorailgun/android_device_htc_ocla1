@@ -25,6 +25,8 @@
 
 BOARD_VENDOR := htc
 
+ALLOW_MISSING_DEPENDENCIES=true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -84,7 +86,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP specific build flags
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/a88000.i2c/i2c-0/0-002c/backlight/lcd-bl/brightness"
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
@@ -131,8 +133,8 @@ TW_CRYPTO_SYSTEM_VOLD_MOUNT := vendor
 ## additional twrp flags ##
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
-USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/htc/ocla1/installer
+#USE_RECOVERY_INSTALLER := true
+#RECOVERY_INSTALLER_PATH := device/htc/ocla1/installer
 TW_HAS_EDL_MODE := true
 
 # TWRP Debug Flags
