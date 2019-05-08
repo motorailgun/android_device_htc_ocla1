@@ -121,7 +121,7 @@ AB_OTA_PARTITIONS += \
 #PLATFORM_VERSION := 16.1.0
 #PLATFORM_SECURITY_PATCH := 2025-12-05
 # Must match build.prop of current system for vold decrypt to work properly!
-PLATFORM_VERSION := 9.0.0
+PLATFORM_VERSION := 9
 PLATFORM_SECURITY_PATCH := 2019-04-01
 
 # Encryption
