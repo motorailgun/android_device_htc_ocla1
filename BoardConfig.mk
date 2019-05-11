@@ -59,6 +59,7 @@ TARGET_PREBUILT_KERNEL := device/htc/ocla1/prebuilt/Image.gz-dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno508
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -122,7 +123,7 @@ AB_OTA_PARTITIONS += \
 #PLATFORM_SECURITY_PATCH := 2025-12-05
 # Must match build.prop of current system for vold decrypt to work properly!
 PLATFORM_VERSION := 9
-PLATFORM_SECURITY_PATCH := 2019-04-01
+PLATFORM_SECURITY_PATCH := 2018-12-01
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
